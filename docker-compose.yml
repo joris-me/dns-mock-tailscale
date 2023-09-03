@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  mock-tailscale:
+    build: .
+    volumes:
+      - ./Corefile:/etc/coredns/Corefile:ro
+    ports:
+      - "53:53/udp"
+    environment:
+      TS_NETWORK: hypothetical-anglerfish
